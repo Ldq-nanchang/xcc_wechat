@@ -1,0 +1,50 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+  <view class="top flex-row">
+    <view class="search flex-row">
+      <icon type="search" size="18" color="#999"/>
+      <input placeholder="请输入关键字查询" type="text" maxlength="20" bindinput="search"/>
+    </view>
+    <view class="search-btn" bindtap="toInfoBtn">
+      <text>搜索</text>
+    </view>
+  </view>
+  <view style="height: 130rpx"></view>
+  <view wx:if="{{!search_state}}">
+    <view class="list">
+      <view class="title flex-row" wx:if="{{history_word.length>0}}">
+        <text>历史记录</text>
+        <text class="iconfont iconshanchu" style="padding: 0 30rpx;" bindtap="clearHistory"></text>
+      </view>
+      <view class="list-content flex-row">
+          <view class="item" wx:for="{{history_word}}" wx:key="{{index}}" bindtap="toInfoLabel" data-word="{{item}}">
+            <text>{{item}}</text>
+          </view>
+      </view>
+    </view>
+
+    <view class="list">
+      <view class="title">
+        <text>热门查询</text>
+      </view>
+      <view class="list-content flex-row">
+          <view class="item" wx:for="{{host_word}}" wx:key="{{index}}" bindtap="toInfoLabel" data-word="{{item.F_ItemName}}">
+            <text>{{item.F_ItemName}}</text>
+          </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="list-" wx:if="{{search_state}}">
+    <view class="item-" wx:for="{{list}}" wx:key="{{item.id}}" bindtap="toInfo" data-item="{{item}}">
+      <!-- <text>{{item.keyword}}</text> -->
+      <rich-text nodes="{{item.keyword}}"></rich-text>
+    </view>
+    <view class="loading-wrapper">
+      <text class="loading" wx:if="{{loading_state}}">数据加载中...</text>
+      <text class="loaded" wx:elif="{{!loading_state}}">没有更多数据了~</text>
+    </view>
+  </view>
+
+</view>

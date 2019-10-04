@@ -1,0 +1,40 @@
+/* components/search_school/search_school.wxss */
+.flex-row {
+  display: flex;
+}
+.list {
+  padding: 0 30rpx;
+  margin-top: 20rpx; 
+  background: #fff;
+}
+.item {
+  padding: 28rpx;
+  border-bottom: 1px solid #E6E6E6;
+  align-items: center;
+}
+.icon {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  margin-right: 20rpx;
+}
+.content {
+  width: calc(100% - 140rpx);
+}
+.name {
+  margin-bottom: 20rpx;
+  font-size: 38rpx;
+  color: #1a1a1a;
+}
+.des {
+  font-size: 26rpx;
+  color: #808080;
+}
+.label {
+  margin-left: 20rpx;
+  padding: 10rpx 16rpx;
+  border: 1px solid #FF8C4E;
+  border-radius: 8rpx;
+  font-size: 24rpx;
+  color: #FF8C4E;
+}

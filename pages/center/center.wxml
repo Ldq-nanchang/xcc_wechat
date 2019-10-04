@@ -1,0 +1,68 @@
+<!--pages/center/center.wxml-->
+<view class="container">
+  <view class="top" wx:if="{{userInfo.name}}">
+    <view class="top-icon flex-row">
+      <image src="{{userInfo.headpic}}" style="width:100%;height:100%;"></image>
+    </view>
+    <view class="top-name">
+      <text>{{userInfo.name}}</text>
+    </view>
+  </view>
+
+  <view class="top" wx:if="{{!userInfo.name}}">
+    <button wx:if="{{!has_mobile}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="button">
+      <view class="top-icon flex-row">
+        <image src="/assets/center_ac.png" style="width:100%;height:100%;"></image>
+      </view>
+      <view class="top-name">
+        <text>注册/登录</text>
+      </view>
+    </button>
+
+    <button wx:if="{{has_mobile}}" bindtap="phoneLogin" class="button">
+      <view class="top-icon flex-row">
+        <image src="/assets/center_ac.png" style="width:100%;height:100%;"></image>
+      </view>
+      <view class="top-name">
+        <text>重新登录</text>
+      </view>
+    </button>
+    
+  </view>
+
+
+  <!-- <button bindtap="test">htoken失效</button> -->
+  <view class="list">
+    <view class="item flex-row" bindtap="share">
+      <button open-type="share" class="flex-row button share" style="width:100%;">
+      <view style="line-height:44rpx;" class="item-left flex-row">
+        <text class="iconfont icon31zhuanfa theme-color" style="font-size:44rpx;"></text>
+        <text class="item-name">分享小程序</text>
+      </view>
+      <text class="iconfont iconsanjiaoright" style="color:#9DABB2;font-size26rpx;"></text>
+      </button>
+    </view>
+
+    <view class="item flex-row" bindtap="toFeedback">
+      <view style="line-height:44rpx;" class="item-left flex-row">
+        <text class="iconfont iconfabu theme-color" style="font-size:44rpx;"></text>
+        <text class="item-name">意见反馈</text>
+      </view>
+      <text class="iconfont iconsanjiaoright" style="color:#9DABB2;font-size26rpx;"></text>
+    </view>
+
+    <button open-type="contact" session-from="weapp" class="button">
+    <view class="item flex-row">
+      <view style="line-height:44rpx;" class="item-left flex-row">
+        <text class="iconfont iconkefu theme-color" style="font-size:44rpx;"></text>
+        <text class="item-name">客服</text>
+        <text class="item-des">（回复数字'1'，下载APP）</text>
+      </view>
+      <text class="iconfont icon-sanjiaoright" style="color:#9DABB2;font-size26rpx;"></text>
+    </view>
+    </button>
+  </view>
+  <!-- <view class="official">
+    <official-account style="height:48px;width:300px;" bindload="test01" binderror="test02"></official-account>
+  </view> -->
+</view>

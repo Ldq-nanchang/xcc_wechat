@@ -1,0 +1,60 @@
+/* pages/center/center.wxss */
+.container {
+  padding: 30rpx;
+}
+.top {
+  align-items: center;
+  margin-bottom: 80rpx;
+}
+.top-icon {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 160rpx;
+  margin-right: 24rpx;
+  overflow: hidden;
+}
+.top-name {
+  margin-top: 10rpx;
+  font-size: 38rpx;
+  color: #1A1A1A;
+  font-weight: 700;
+}
+
+.button {
+  padding:0;
+  margin:0;
+  background:#fff;
+  text-align:left;
+  list-style: none;
+  border:none;
+}
+.button::after{
+  border:none;
+}
+.share {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  border: none;
+}
+
+.item {
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1px solid #E6E6E6;
+}
+.item-name {
+  font-size:30rpx;
+  color:#1A1A1A;
+  margin-left:30rpx;
+}
+.item-des {
+  font-size: 26rpx;
+  color: #999;
+  margin-left: 26rpx;
+}
+.item-left {
+  align-items: center;
+}

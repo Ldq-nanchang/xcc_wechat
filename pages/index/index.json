@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "informations": "/components/informations/informations"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,56 @@
+<!--pages/ranking/ranking.wxml-->
+<view class="container">
+
+  <view class="condition flex-row">
+      <view class="condition-item" wx:for="{{condition}}" wx:for-index="index_" wx:key="{{index_}}">
+        <picker class="picker-wrapper flex-row" bindchange="bindPickerChange" 
+        value="{{index}}" range="{{item.condition_value}}"
+        id="{{index_}}" range-key="ItemName">
+
+          <!-- <view class="picker- flex-row">
+            <view><text>{{item.condition_name}}</text></view>
+            <view class="picker-arrow- arrow-bottom-10"></view>
+          </view>
+          <view class="picker-condition">
+            <text>{{item.condition_value[item.index].ItemName}}</text>
+            <text wx:if="!item.index">
+            <text style="padding-left:30rpx;" 
+            wx:for="{{item.condition_name.length-2}}" wx:key="{{index}}"></text>
+            </text>
+          </view> -->
+          <view class="picker-condition">{{item.condition_name}}</view>
+          <view class="picker- flex-row">
+            <text>{{item.condition_name}}</text> 
+            <view class="picker-arrow- arrow-bottom-10"></view>
+          </view>
+
+        </picker>
+      </view>
+  </view>
+
+  <view style="height:90rpx"></view>
+  <view class="list">
+    <view class="item flex-row" wx:for="{{list}}" wx:key="{{item.F_Id}}"
+    bindtap='toInfo' data-item="{{item}}"
+    style="{{'background: linear-gradient(to right,'+item.colorfrom+','+item.colorto+')'}}">
+      <view style="width:50%;">
+        <image src="/assets/ranking_bg.png" style="width:300rpx;height:300rpx;"/>
+      </view>
+      <view class="item-">
+        <view class="title"><text>{{item.typename}}</text></view>
+        <view class="name"><text>{{item.title}}</text></view>
+        <!-- <view class="date">{{item.f_lastmodifytime}}</view> -->
+      </view>
+      <view class="item-arrow">
+        <text class="iconfont iconyoujiantou" style="font-size:40rpx;"></text>
+      </view>
+    </view>
+
+    <view class="loading-wrapper">
+      <text class="loading" wx:if="{{loading_state}}">数据加载中...</text>
+      <text class="loaded" wx:elif="{{!loading_state}}">没有更多数据了~</text>
+      
+    </view>
+  </view>
+
+</view>

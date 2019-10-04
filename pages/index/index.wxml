@@ -1,0 +1,101 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> 
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view> -->
+  
+  <view class="{{search_shadow&&!tab_fixed?'top top-shadow flex-row':'top flex-row'}}">
+    <view class="top-address flex-row">
+        <view style="margin-right:10rpx;">
+          <text class="iconfont icondingwei1" style="font-size:38rpx"></text>
+        </view>
+        <picker class="picker-wrapper flex-row" bindchange="bindPickerChange" value="{{index}}" range="{{citys}}">
+          <view class="picker">{{citys[city_index]}}</view>
+        </picker>
+        <view class="picker-arrow arrow-bottom"></view>
+    </view>
+    <view class="search flex-row" bindtap="goSearch">
+      <icon type="search" size="18" />
+      <!-- <input placeholder="请输入关键字查询"/> -->
+      <text>请输入关键字查询</text>
+    </view>
+  </view>
+  <!-- <view class="fixed-tab">
+    <view class="{{tab_index==index?'tab-item tab-item-active':'tab-item'}}" 
+    bindtap="titleClick" wx:for="{{tab_list}}" wx:key="{{item}}" data-index="{{index}}">
+      <text>{{item}}</text>
+    </view>
+  </view> -->
+  <view style="height:130rpx;"></view>
+  <!-- 轮播图 -->
+  <view class="index-head">
+  <!-- <view style="height:50rpx"></view> -->
+  <view class="slider-title">
+    <text>热点</text>
+  </view>
+  <view class="swiper-wrapper">
+    <swiper class="swiper"
+    indicator-dots="{{false}}"
+    autoplay="{{true}}"
+    interval="{{5000}}"
+    duration="{{1000}}"
+    bindchange="swiperChange"
+    >
+      <block wx:for="{{hot}}" wx:key="{{index}}">
+        <swiper-item bindtap="goInfo" data-url="{{item.url}}">
+          <!-- <image src="{{item.picname}}" class="slide-image"/> -->
+          <view style="{{'background:url('+item.picname+') center center /cover'}}" class="slide-image"></view>
+        </swiper-item>
+
+      </block>
+    </swiper>
+      <view class="swiper-foot flex-row">
+        <view class="swiper-foot-left">
+          <text>{{swiper.des}}</text>
+        </view>
+        <view class="swiper-foot-right">
+          <text>{{swiper.index}}/{{swiper_leng}}</text>
+        </view>
+      </view>
+
+
+  </view>
+  <!-- 菜单栏 -->
+  <view class="slider-title">
+    <text>优选</text>
+  </view>
+  <view class="btns-wrapper">
+    <view class="btns-row flex-row" wx:for="{{menu}}" wx:key="{{index}}">
+      <view class="btn-item flex-col" wx:for="{{item}}" wx:for-item="item_" wx:key="{{item.F_Id}}"
+      bindtap="menuTo" data-item="{{item_}}">
+        <image src="{{item_.menuicon}}" class="btn-icon"/>
+        <view>
+          <text>{{item_.menuname}}</text>
+        </view>
+      </view>
+    </view>
+    <view style="height:1rpx;"></view>
+  </view>
+  
+  </view>
+  <!-- Tab选项卡 -->
+  <view class="{{tab_fixed?'tab-list flex-row':'flex-row'}}" style="padding: 0 30rpx;">
+    <view class="{{tab_index==index?'tab-item tab-item-active':'tab-item'}}" 
+    bindtap="titleClick" wx:for="{{tab_list}}" wx:key="{{item.name}}" data-index="{{index}}">
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+  <swiper class='swiper-tab' bindchange='pagechange' current='{{tab_index}}' style="{{'height:'+swiper_h+';min-height:100vh'}}">
+    <swiper-item class='swiper-tab' wx:for="{{tab_list}}" wx:key="{{index}}">
+      <informations id="{{'informations'+index}}" wx:if="{{item.show}}"/>
+    </swiper-item>
+  </swiper>
+  <view style="height:100rpx;"></view>
+</view>

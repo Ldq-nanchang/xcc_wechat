@@ -1,0 +1,60 @@
+/* pages/new/new.wxss */
+.container {
+  background: #f5f5f5;
+  
+}
+
+
+.head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.search-wrapper {
+  padding: 10rpx 30rpx 0 30rpx;
+}
+.search {
+  height: 70rpx;
+  align-items: center;
+  justify-content: center;
+  background: #EBF0F2;
+  color: #999;
+  border-radius: 10rpx;
+}
+.search-input {
+  margin-left: 20rpx;
+  font-size: 26rpx;
+}
+.tabs {
+  padding: 0 60rpx;
+}
+.tab-item {
+  padding: 30rpx 0;
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 82rpx;
+  font-size: 30rpx;
+  color: #19191A;
+  width: 120rpx;
+  text-align: center;
+}
+.tab-active {
+  color:#34C3CB;
+}
+.tab-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+  border-bottom: 3px solid #34C3CB;
+  width: 60rpx;
+
+}
+.swiper-tab {
+  min-height: 100vh;
+}

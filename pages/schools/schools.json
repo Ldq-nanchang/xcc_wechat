@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "schoolList": "/components/school_list/school_list"
+  },
+  "enablePullDownRefresh": true
+}

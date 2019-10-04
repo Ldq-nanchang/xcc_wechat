@@ -1,0 +1,44 @@
+<!--pages/feedback/feedback.wxml-->
+<view class="container">
+  <view class="form">
+
+    <view class="item flex-row">
+      <view class="item-name">
+        <text>姓</text>
+        <text style="margin-left:56rpx;">名:</text>
+      </view>
+      <view class="item-content">
+        <input placeholder="请输入姓名" bindblur="changeName"/>
+      </view>
+    </view>
+    <view class="item flex-row">
+      <view class="item-name">
+        <text>手</text>
+        <text style="margin: 0 14rpx;">机</text>
+        <text>号:</text>
+      </view>
+      <view class="item-content">
+        <input placeholder="请输入手机号" type="number" maxlength="11" bindblur="changeMobile"/>
+      </view>
+    </view>
+    <view class="item flex-row">
+      <view class="item-name">
+        <text>邮箱地址:</text>
+      </view>
+      <view class="item-content">
+        <input placeholder="请输入邮箱" bindblur="changeEmail"/>
+      </view>
+    </view>
+    <view class="item flex-row" style="border-bottom:1px solid #fff;">
+      <view class="item-name">
+        <text>意见反馈:</text>
+      </view>
+      <view class="item-content">
+        <textarea placeholder="请输入您的建议" style="width:calc(100% - 20rpx);background:#f5f5f5;padding:10rpx;height:100px" bindblur="changeDes"/>
+      </view>
+    </view>
+  </view>
+  <view class="post" bindtap="postFeedback">
+    <button style="background:#34C3CB;color:#fff;">提交</button>
+  </view>
+</view>

@@ -1,0 +1,29 @@
+<!--pages/new/new.wxml-->
+<view class="container">
+  <view class="head">
+    <view class="search-wrapper" bindtap="goSearch">
+      <view class="search flex-row">
+        <icon type="search" size="18" />
+        <text class="search-input">资讯搜索</text>
+      </view>
+    </view>
+      <scroll-view
+      scroll-x 
+      style="width:100vw">
+        <view class="tabs flex-row" style="{{'width:'+(tabs.length*202)+'rpx'}}">
+          <view class="{{tab_index==index?'tab-item tab-active':'tab-item'}}" 
+          wx:for="{{tab_list}}" wx:key="{{index}}" bindtap="select_tab" data-index="{{index}}">
+            <text>{{item.TypeName}}</text>
+          </view>
+        </view>
+      </scroll-view>
+  </view>
+  <view style="height:170rpx;"></view>
+  <swiper class='swiper-tab' bindchange='pagechange' current='{{tab_index}}' style="{{'height:'+swiper_h}}">
+    <swiper-item class='swiper-tab' wx:for="{{tab_list}}" wx:key="{{index}}">
+    <view style="bakground:#fff;" wx:if="{{item.show}}">
+      <informations id="{{'informations'+index}}" is_new="{{true}}"/>
+    </view>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,49 @@
+<!--pages/search_info/search_info.wxml-->
+<view class="container">
+  <view class="top-wrapper">
+    <view class="top flex-row">
+      <view class="search flex-row" bindtap="toSearch">
+        <icon type="search" size="18" color="#999"/>
+        <!-- <input placeholder="请输入关键字查询" type="text" maxlength="20" bindinput="search"/> -->
+        <text style="margin-left:20rpx;">{{key_word}}</text>
+      </view>
+      <view class="search-btn" bindtap="toSearch">
+        <text>搜索</text>
+      </view>
+    </view>
+    <view class="nav-list flex-row">
+      <view class="{{nav_index==index?'nav-item nav-active':'nav-item'}}" wx:for="{{navs}}" wx:key="{{index}}" 
+      bindtap="clickNav" data-index="{{index}}">
+        <text>{{item.TypeName}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view style="height:200rpx;"></view>
+  <swiper class='swiper-tab' bindchange='pagechange' current='{{nav_index}}' style="{{'height:'+swiper_h}}">
+    <swiper-item class='swiper-tab'>
+      <view style="bakground:#fff;" wx:if="{{navs[0].show}}">
+        <searchSchool id="{{navs[0].TypeCode}}"/>
+      </view>
+    </swiper-item>
+
+    <swiper-item class='swiper-tab'>
+      <view style="bakground:#fff;" wx:if="{{navs[1].show}}">
+        <searchSchool id="{{navs[1].TypeCode}}"/>
+      </view>
+    </swiper-item>
+
+    <swiper-item class='swiper-tab'>
+      <view style="bakground:#fff;" wx:if="{{navs[2].show}}">
+        <informations id="{{navs[2].TypeCode}}" is_search="{{true}}"/>
+      </view>
+    </swiper-item>
+
+    <swiper-item class='swiper-tab'>
+      <view style="bakground:#fff;" wx:if="{{navs[3].show}}">
+        <searchSchool id="{{navs[3].TypeCode}}"/>
+      </view>
+    </swiper-item>
+
+  </swiper>  
+</view>

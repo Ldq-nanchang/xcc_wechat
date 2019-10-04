@@ -1,0 +1,38 @@
+<view class="component">
+  <!-- <scroll-view
+  style="height:100vh" 
+  scroll-y="{{is_scroll||is_scroll_}}"
+  bindscrolltolower="scrolltolower" 
+  data-left="51"
+  bindscroll="scroll"
+  upper-threshold="0"
+  > -->
+  <view class="list">
+    <view class="item flex-row" wx:for="{{list}}" wx:key="{{index}}" bindtap="toInfo" data-item="{{item}}">
+      <view class="{{item.coverpic?'content':'content-100'}}">
+        <view wx:if="{{is_search}}" style="font-size:32rpx;margin-bottom:20rpx">
+          <rich-text nodes="{{item.title}}"></rich-text>
+        </view>
+        <view wx:if="{{!is_search}}">
+          <view class="title tow-line">{{item.title}}</view>
+          <view class="name tow-line">{{item.name}}</view>
+        </view>
+
+        <view class="content-foot">
+          <text style="margin-right:26rpx;">{{item.source}}</text>
+          <text>{{item.date}}</text>
+        </view>
+      </view>
+      <view wx:if="{{item.coverpic}}" class="headpic-wrapper" style="{{'background:url('+item.coverpic+') center center /cover'}}"></view>
+    </view>
+    <view class="loading-wrapper">
+      <text class="loading" wx:if="{{loading_state}}">数据加载中...</text>
+      <text class="loaded" wx:elif="{{!loading_state}}">没有更多数据了~</text>
+      
+    </view>
+    
+  </view>
+  <!-- </scroll-view> -->
+  
+</view>
+

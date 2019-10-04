@@ -1,0 +1,57 @@
+/* pages/compare/compare.wxss */
+.container {
+  padding: 100rpx 30rpx 0 30rpx;
+}
+.top {
+  margin-bottom: 80rpx;
+  color: #212121;
+  font-size: 38rpx;
+  font-weight: 700;
+}
+.item {
+  padding: 22rpx 30rpx 30rpx 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 1px 1px 10px 2px rgba(63, 213, 190, 0.48);
+  border-radius: 10rpx;
+}
+.item-ac {
+    background: linear-gradient(to right,#40D6BE,#34C3CB);
+}
+.icon {
+  justify-content: center;
+  height: 120rpx;
+  margin-bottom: 18rpx;
+}
+.icon-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  overflow: hiden;
+}
+.add-txt {
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: 700;
+  text-align: center;
+}
+.vs-wrapper {
+  justify-content: center;
+  margin-bottom: 36rpx;
+}
+
+.post-compare {
+  position: fixed;
+  left: 30rpx;
+  bottom: 100rpx;
+  justify-content: center;
+  width: calc(100% - 62rpx);
+  height: 80rpx;
+  background: linear-gradient(to right,#40D6BE,#34C3CB);
+  border-radius: 10rpx;  
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.post-compare:active {
+  opacity: .7;
+}

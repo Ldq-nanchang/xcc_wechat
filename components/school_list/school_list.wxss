@@ -1,0 +1,83 @@
+/* components/school_list/school_list.wxss */
+@import "/assets/wxss/iconfont.wxss";
+.flex-row {
+  display: flex;
+}
+.three-line {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.label {
+  padding: 5rpx 20rpx 10rpx 20rpx;
+  border-radius: 10rpx; 
+}
+.label-empty {
+  padding: 10rpx 30rpx 10rpx 30rpx;
+  border-radius: 10rpx; 
+}
+
+
+.list {
+  padding: 30rpx;
+  
+}
+.item {
+  border-radius: 20rpx;
+  box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.2);
+  background: #fff;
+  margin-bottom: 30rpx;
+}
+.item-head {
+  padding: 20rpx;
+  
+}
+.item-head-icon {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  margin-right: 20rpx;
+}
+.head-name {
+  color:#1A1A1A;
+  font-size: 34rpx;
+}
+.head-des {
+  width: calc(100% - 140rpx)
+}
+
+
+.item-content {
+  padding: 20rpx;
+  padding-top: 0;
+  border-top: 1px solid #E6E6E6;
+}
+.address {
+  font-size: 26rpx;
+  color: #34C3CB;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.content-info {
+  margin-bottom: 10rpx;
+  color:#808080;
+  font-size: 24rpx;
+  text-align: justify;
+}
+.foot-labels {
+  margin-top: 20rpx;
+  flex-wrap: wrap;
+}
+.foot-label {
+  margin: 0 15rpx 15rpx 0;
+}
+.loading-wrapper {
+  padding: 20rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #777;
+}

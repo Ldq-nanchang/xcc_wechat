@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "searchSchool": "/components/search_school/search_school",
+    "informations": "/components/informations/informations"
+  },
+  "enablePullDownRefresh": true
+}

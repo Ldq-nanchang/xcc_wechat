@@ -1,0 +1,77 @@
+/* pages/school_search/school_search.wxss */
+
+.top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 30rpx;
+  /* margin-bottom: 50rpx; */
+  width: calc(100% - 60rpx);
+  background: #fff;
+  z-index: 1000;
+}
+
+/* .top-address {
+  font-size: 34rpx;
+  position: relative;
+  color:#fff;
+} */
+.picker-wrapper {
+  align-items: center;
+}
+.picker {
+  padding-right: 40rpx;
+}
+.picker-condition {
+  padding-right: 40rpx;
+  color: transparent;
+}
+.picker- {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.picker-arrow {
+  position: absolute;
+  right: 5rpx;
+  top: 15rpx;
+}
+.search {
+  flex-grow: 1;
+  align-items: center;
+  width: auto;
+  height: 74rpx;
+  padding-left: 30rpx;
+  /* margin-left: 30rpx; */
+  background: #EBF0F2;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+.search text {
+  margin-left: 14rpx;
+}
+
+.condition {
+  position: fixed;
+  top: 128rpx;
+  left: 0;
+  justify-content: space-between;
+  z-index: 1000;
+  height: 26rpx;
+  padding: 30rpx;
+  padding-top: 0;
+  width: calc(100% - 60rpx);
+  font-size: 26rpx;
+  background: #fff;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+}
+.condition-item {
+  position: relative;
+  color: #666;
+}
+.picker-arrow- {
+  position: absolute;
+  right: -20rpx;
+  top: 2rpx;
+}

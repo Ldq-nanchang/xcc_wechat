@@ -1,0 +1,37 @@
+<!--pages/school_search/school_search.wxml-->
+
+<view class="container" style="background: #f5f5f5;">
+  <view class="top flex-row">
+    <!-- <view class="top-address flex-row">
+        <picker class="picker-wrapper flex-row" bindchange="bindPickerChange" value="{{index}}" range="{{citys}}" id="citys">
+          <view class="picker">{{citys[city_index]}}</view>
+        </picker>
+        <view class="picker-arrow arrow-bottom-"></view>
+    </view> -->
+    <view class="search flex-row" bindtap="goSearch">
+      <icon type="search" size="18" color="#999"/>
+      <text>请输入关键字查询</text>
+      <view class="search-cover"></view>
+    </view>
+  </view>
+  <view class="condition flex-row" wx:if="{{is_compare!='b'}}">
+      <view class="condition-item" wx:for="{{condition}}" wx:for-index="index_" wx:key="{{index_}}">
+        <picker class="picker-wrapper flex-row" bindchange="bindPickerChange" 
+        value="{{index}}" range="{{item.condition_value}}"
+        id="{{index_}}" range-key="ItemName">
+          <!-- <view class="picker-condition">{{item.condition_value[index_].ItemName}}</view> -->
+          <view class="picker-condition">{{item.condition_name}}</view>
+          <view class="picker- flex-row">{{item.condition_name}}
+          <view class="picker-arrow- arrow-bottom-10"></view></view>
+        </picker>
+        
+      </view>
+  </view>
+  <view style="height:188rpx;"></view>
+
+    <schoolList id="school-list" 
+    bind:getCondition="getCondition" bind:updataCondition="updataCondition" bind:clickSchool="clickSchool"
+    condition_edit="{{condition_edit}}" is_compare="{{is_compare}}" url="{{url}}" id="school-list"/>
+
+</view>
+

@@ -1,0 +1,36 @@
+<!--pages/compare/compare.wxml-->
+<view class="container">
+  <view class="top">
+    <text>依次选择进行对比的学校</text>
+  </view>
+  <view class="{{compare_a.F_Id?'item item-ac':'item'}}" bindtap="selectSchool" data-id="a">
+    <view class="icon flex-row">
+      <view wx:if="{{compare_a.F_Id}}" class="icon-img" style="{{'background:url('+compare_a.logo+') center center /cover;'}}"></view>
+      <image wx:elif="{{!compare_a.F_Id}}" src="/assets/compare_add.png" style="width:100rpx;height:100rpx;"></image>
+    </view>
+    <view class="add-txt">
+      <text wx:if="{{!compare_a.F_Id}}">请选择第一所学校</text>
+      <text wx:elif="{{compare_a.F_Id}}" style="color:#fff">{{compare_a.shortname}}</text>
+    </view>
+  </view>
+
+  <view class="vs-wrapper flex-row">
+    <image src="/assets/VS.png" style="width:124rpx;height:80rpx;"></image>
+  </view>
+
+  <view class="{{compare_b.F_Id?'item item-ac':'item'}}" bindtap="selectSchool" data-id="b">
+    <view class="icon flex-row">
+      <view wx:if="{{compare_b.F_Id}}" class="icon-img" style="{{'background:url('+compare_b.logo+') center center /cover;'}}"></view>
+      <image wx:elif="{{!compare_b.F_Id}}" src="/assets/compare_add.png" style="width:100rpx;height:100rpx;"></image>
+    </view>
+    <view class="add-txt">
+      <text wx:if="{{!compare_b.F_Id}}">请选择对比学校</text>
+      <text wx:elif="{{compare_b.F_Id}}" style="color:#fff">{{compare_b.shortname}}</text>
+    </view>
+  </view>
+
+  <view class="post-compare flex-row" bindtap='toCompare'>
+    <text>立即对比</text>
+  </view>
+
+</view>

@@ -1,0 +1,49 @@
+<!--components/school_list/school_list.wxml-->
+<view class="components">
+  <!-- <scroll-view
+  scroll-top="{{scroll_top}}"
+  style="height:100vh;" 
+  scroll-y
+  catchscrolltolower="scrolltolower" 
+  data-left="51"
+  bindscroll="scroll"
+  > -->
+  <view class="list">
+    <view class="item" wx:for="{{list}}" wx:key="{{item.F_Id}}"
+    bindtap="selectSchool" data-item="{{item}}">
+      <view class="item-head flex-row">
+        <view class="item-head-icon" style="{{'background:url('+item.logo+') center center /cover'}}"></view>
+        <view class="head-des">
+          <view class="head-name"><text>{{item.name}}</text></view>
+          <view class="flex-row" style="margin-top:10rpx;" catchtap='selectGroup' data-id="{{item.groupcode}}">
+              <view wx:if="{{item.groupname}}" 
+              class="label" style="background:#FFD712;color:#fff;font-size:24rpx"><text>{{item.groupname}}</text></view>
+          </view>
+        </view>
+      </view>
+
+      <view class="item-content" wx:if="{{!is_compare}}">
+        <view class="address" catchtap="tomap" data-item="{{item}}">
+          <text class="iconfont icondingwei" style="margin-right:10rpx;"></text>
+          <text>{{item.address}}</text>
+        </view>
+        <view class="content-info three-line" wx:if="{{item.resume}}">
+          <text>{{item.resume}}</text>
+        </view>
+        <view class="flex-row foot-labels" style="font-size:24rpx;">
+          <view class="label-empty foot-label" catchtap='selectTag' data-id="{{item_.F_ItemCode}}"
+          wx:for="{{item.tags}}" wx:for-item="item_" wx:for-index="index_" wx:key="{{item_.F_ItemCode}}"
+          style="{{'border:1px solid '+item_.color+';color:'+item_.color}}">
+            <text>{{item_.F_ItemName}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="loading-wrapper">
+      <text class="loading" wx:if="{{loading_state}}">数据加载中...</text>
+      <text class="loaded" wx:elif="{{!loading_state}}">没有更多数据了~</text>
+    </view>
+
+  </view>
+  <!-- </scroll-view> -->
+</view>

@@ -1,0 +1,101 @@
+/* pages/ranking/ranking.wxss */
+.container {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+.picker-wrapper {
+  align-items: center;
+  
+}
+.picker {
+  padding-right: 40rpx;
+}
+.picker-condition {
+  padding-right: 40rpx;
+  color: transparent;
+}
+.picker- {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.picker-arrow {
+  position: absolute;
+  right: 5rpx;
+  top: 15rpx;
+}
+
+
+.condition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  justify-content: space-between;
+  z-index: 1000;
+  height: 26rpx;
+  padding: 30rpx;
+
+  width: calc(100% - 60rpx);
+  font-size: 26rpx;
+  background: #fff;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+}
+.condition-item {
+  position: relative;
+  color: #666;
+
+}
+.picker-arrow- {
+  position: absolute;
+  right: -20rpx;
+  top: 2rpx;
+}
+
+/* 列表 */
+.list {
+  padding: 30rpx;
+}
+.item {
+  position: relative;
+  justify-content: flex-end;
+  border-radius: 30rpx;
+  margin-bottom: 26rpx;
+  overflow: hidden;
+  height: 160rpx;
+  
+}
+.item-{
+  padding: 30rpx 40rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 60rpx);
+  z-index: 500;
+}
+/* .title {
+  margin-bottom: 60rpx;
+  font-size: 54rpx;
+  font-weight: 700;
+  color: #FFFFFF;
+} */
+.title, .name {
+  font-size: 40rpx;
+  color: #fff;
+}
+.date {
+  font-size: 28rpx;
+  color: #fff;
+  opacity: .5;
+}
+.loading-wrapper {
+  padding: 20rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #777;
+}
+.item-arrow {
+  position: absolute;
+  right: 20rpx;
+  top: 60rpx;
+  color: #fff;
+}

@@ -1,0 +1,161 @@
+/**index.wxss**/
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */
+.top {
+  position: fixed;
+  top: -2rpx;
+  left: 0;
+  padding: 30rpx;
+  /* margin-bottom: 50rpx; */
+  width: calc(100% - 60rpx);
+  background: #fff;
+  z-index: 1000;
+}
+.top-shadow {
+  box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+}
+.top-address {
+  align-items: center;
+  font-size: 34rpx;
+  position: relative;
+}
+.picker-wrapper {
+  align-items: center;
+}
+.picker {
+  padding-right: 40rpx;
+}
+.picker-arrow {
+  position: absolute;
+  right: 5rpx;
+  top: 15rpx;
+}
+.search {
+  flex-grow: 1;
+  align-items: center;
+  width: auto;
+  height: 74rpx;
+  padding-left: 30rpx;
+  margin-left: 30rpx;
+  background: #F2F3F3;
+  border-radius: 10rpx;
+  font-size: 26rpx;
+  color: #BCBFC3;
+}
+.search text {
+  margin-left: 14rpx;
+}
+
+.slider-title {
+  font-size: 40rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  font-weight: 700;
+}
+/* 轮播图 */
+.swiper-wrapper {
+  position: relative;
+  height: 340rpx;
+  border-radius: 15rpx;
+  overflow: hidden;
+  margin-bottom: 50rpx;
+}
+.swiper {
+  height: 100%;
+}
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+.swiper-foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60rpx;
+  background: rgba(0,0,0,0.3);
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+.swiper-foot-left {
+  padding-left: 28rpx;
+  width: 80%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.swiper-foot-right {
+  padding-left: 28rpx;
+  width: 20%;
+}
+/* 菜单 */
+.btns-wrapper {
+  padding: 20rpx 0;
+}
+.btns-row {
+  margin-bottom: 40rpx;
+  justify-content: space-between;
+  color: #1a1a1a;
+  font-size: 26rpx;
+  padding: 0 20rpx;
+}
+.btn-item {
+  align-items: center;
+  /* width: 25%; */
+}
+
+.btn-icon {
+  width: 66rpx;
+  height: 66rpx;
+  margin-bottom: 16rpx;
+}
+.index-head {
+  padding: 0 30rpx;
+}
+/* Tab选项卡 */
+.tab-list {
+  position: fixed;
+  top: 126rpx;
+  left: 0;
+  padding: 0 30rpx;
+  background: #fff;
+  width: calc(100% - 60rpx);
+  z-index: 900;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+}
+.swiper-tab {
+  /* height: 150vh; */
+  overflow-y: scrolll;
+}
+.tab-item {
+  width: 170rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  color: #4D4D4D;
+  text-align: 70rpx;
+}
+.tab-item-active {
+  font-size: 40rpx;
+  color: #333333;
+  font-weight: 600;
+}

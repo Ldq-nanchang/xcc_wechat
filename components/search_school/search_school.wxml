@@ -1,0 +1,42 @@
+<!--components/search_school/search_school.wxml-->
+<view class="component">
+  <view class="list">
+
+    <view class="item" wx:for="{{list}}" wx:key="{{item.id}}" bindtap="toSearchResult" data-item="{{item}}">
+      <view wx:if="{{item.periodcode!='06'}}" class="flex-row">
+          <view class="icon" style="{{'background:url('+item.logo+') center center /cover'}}"></view>
+          <view class="content">
+            <view class="name">
+              <rich-text nodes="{{item.name}}"></rich-text>
+            </view>
+            <view class="des flex-row">
+              <text class="iconfont icondingwei"></text>
+              <rich-text nodes="{{item.address}}"></rich-text>
+            </view>
+          </view>
+      </view>
+
+      <view wx:if="{{item.periodcode=='06'}}" class="flex-row">
+          <view class="icon" style="{{'background:url('+item.headpic+') center center /cover'}}"></view>
+          <view class="content">
+            <view class="name flex-row">
+              <rich-text nodes="{{item.truename}}"></rich-text>
+              <text class="iconfont icon-nan" wx:if="{{item.sex=='男'}}" style="font-size:26rpx;color:#29AEFF;padding:10rpx 0 0 10rpx"></text>
+              <text class="iconfont icon-nv" wx:if="{{item.sex=='女'}}" style="font-size:26rpx;color:#FF7171;padding:10rpx 0 0 10rpx"></text>
+              <view class="label" wx:for="{{item.label}}" wx:for-item="item_" wx:for-index="index_" wx:key="index_">{{item_}}</view>
+            </view>
+            <view class="des flex-row">
+              <rich-text nodes="{{item.inaugurate}}"></rich-text>
+            </view>
+          </view>
+      </view>
+    </view>
+
+
+
+    <view class="loading-wrapper">
+      <text class="loading" wx:if="{{loading_state}}">数据加载中...</text>
+      <text class="loaded" wx:elif="{{!loading_state}}">没有更多数据了~</text>
+    </view>
+  </view>
+</view>
